@@ -8,44 +8,46 @@
           
               <div class="col-md-6 p-3" *ngFor="let dishilist of filterDish">
                 <div class="d-flex align-items-start p-2 border" style="box-shadow: 0 0 10px #eee;">
-                  <img class="img-fluid mr-3" style="width: 110px;height: 110px;" [src]="dishilist.dish_image" alt="">
-                  <div class="product-content">
-                    <h5>{{dishilist.dish_name}}
-                      <span class="veg-icon" [ngStyle]="{'color': dishilist.dish_Type === 1? 'green' : 'red'}">
-                        <span class="fa-stack fa-lg">
-                          <i class="fa fa-square-o fa-stack-2x"></i>
-                          <i class="fa fa-circle fa-stack-1x"></i>
-                      </span>
-                     </span>
-                    </h5>
-                    <div class="row">
-<div class="col-md-6">
-<strong>{{dishilist.dish_currency}} {{dishilist.dish_price}}</strong>
-</div>
-<div class="col-md-6">
-  <strong>{{dishilist.dish_calories}} calories</strong>
+                  <img class="img-fluid " style="width: 110px;height: 110px;" [src]="dishilist.dish_image" alt="">
+                  <div class="container" style="width: 70%;">
+                    <div class="product-content">
+                      <h5>{{dishilist.dish_name}}
+                        <span class="veg-icon" [ngStyle]="{'color': dishilist.dish_Type === 1? 'green' : 'red'}">
+                          <span class="fa-stack fa-lg">
+                            <i class="fa fa-square-o fa-stack-2x"></i>
+                            <i class="fa fa-circle fa-stack-1x"></i>
+                        </span>
+                       </span>
+                      </h5>
+                      <div class="row">
+  <div class="col-md-6">
+  <strong>{{dishilist.dish_currency}} {{dishilist.dish_price}}</strong>
   </div>
-                    </div>
-                  <div style="width: 391px;">
-                    <small><a >{{dishilist.dish_description | slice:0:69}}</a></small>
-                  </div>
-                  
-                    <div class="row">
-                      <div class="col-md-6">
-<div *ngIf="dishilist.addonCat.length > 0">
-  <h4 style="font-weight: 500;
-color: #cc2c2c;">customization available</h4>
-</div>
+  <div class="col-md-6">
+    <strong>{{dishilist.dish_calories}} calories</strong>
+    </div>
                       </div>
-<div class="col-md-6">
-  <ngx-number-spinner
-  [value]="0"
-  (change)="change($event)" 
-  [min]="0">
-</ngx-number-spinner>
-</div>
+                    <div  class="dec">
+                      <small><a >{{dishilist.dish_description | slice:0:69}}</a></small>
                     </div>
-                  
+                    
+                      <div class="row">
+                        <div class="col-md-6">
+  <div *ngIf="dishilist.addonCat.length > 0">
+    <h4 style="font-weight: 500;
+  color: #cc2c2c;font-size: 13px;">customization available</h4>
+  </div>
+                        </div>
+  <div class="col-md-6">
+    <ngx-number-spinner
+    [value]="0"
+    (change)="change($event)" 
+    [min]="0">
+  </ngx-number-spinner>
+  </div>
+                      </div>
+                    
+                    </div>
                   </div>
                 </div>
               </div>

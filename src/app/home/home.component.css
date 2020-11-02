@@ -100,4 +100,12 @@ margin: 0 0 1px;
     border-radius:4px;
     display: inline-block;
     vertical-align: middle;
+  }
+  .dec{
+    width: 391px;
   } 
+  @media only screen and (min-width: 374px) and (max-width: 560px){
+    .dec{
+      width: 200px;
+    } 
+  }
